@@ -8,10 +8,10 @@ import '@openzeppelin/hardhat-upgrades';
 import 'hardhat-abi-exporter';
 
 const {
-  BSC_TESTNET_URL,
-  BSC_TESTNET_DEPLOYER_PRIVATE_KEY,
-  BSC_MAINNET_URL,
-  BSC_MAINNET_DEPLOYER_PRIVATE_KEY,
+  POLYGON_TESTNET_URL,
+  POLYGON_TESTNET_DEPLOYER_PRIVATE_KEY,
+  POLYGON_MAINNET_URL,
+  POLYGON_MAINNET_DEPLOYER_PRIVATE_KEY,
 } = process.env;
 
 // This is a sample Hardhat task. To learn how to create your own go to
@@ -36,22 +36,27 @@ task('accounts', 'Prints the list of accounts', async (taskArgs, hre) => {
 const config: HardhatUserConfig = {
   solidity: '0.8.17',
   networks: {
-    bsc_testnet: {
-      url: BSC_TESTNET_URL,
-      chainId: 97,
+    polygon_testnet: {
+      url: POLYGON_TESTNET_URL,
+      chainId: 80001,
       gasPrice: 20000000000,
-      accounts: [`0x${BSC_TESTNET_DEPLOYER_PRIVATE_KEY}`],
+      accounts: [`0x${POLYGON_TESTNET_DEPLOYER_PRIVATE_KEY}`],
     },
-    bsc_mainnet: {
-      url: BSC_MAINNET_URL,
-      accounts: [`0x${BSC_MAINNET_DEPLOYER_PRIVATE_KEY}`],
+    polygon_mainnet: {
+      url: POLYGON_MAINNET_URL,
+      accounts: [`0x${POLYGON_MAINNET_DEPLOYER_PRIVATE_KEY}`],
     },
   },
   mocha: {
     timeout: 2 * 60 * 1000,
   },
   abiExporter: {
-    except: ['contracts/tests', 'contracts/core', 'contracts/providers'],
+    except: [
+      'contracts/tests',
+      'contracts/core',
+      'contracts/providers',
+      'contracts/example',
+    ],
   },
 };
 export default config;

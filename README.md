@@ -43,8 +43,8 @@ npx hardhat test --network mumbai
 ### Deploy contract to testnet or mainnet
 
 ```shell
-npx hardhat run --network bsc_testnet scripts/HelloWorld-deploy.ts
-npx hardhat run --network bsc_testnet filePath
+npx hardhat run --network polygon_testnet scripts/HelloWorld-deploy.ts
+npx hardhat run --network polygon_testnet filePath
 ```
 
 ### Record the address of the contract after deployment

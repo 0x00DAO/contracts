@@ -1,18 +1,24 @@
 import { hardhatArguments } from 'hardhat';
 import { deployNetwork } from './deploy.const';
 
-interface ContractDeployAddressInterface {}
+interface ContractDeployAddressInterface {
+  WelcomeEveryOne: string | null;
+}
 
-const ContractDeployAddress_BscTestNet: ContractDeployAddressInterface = {};
+const ContractDeployAddress_BscTestNet: ContractDeployAddressInterface = {
+  WelcomeEveryOne: null,
+};
 
-const ContractDeployAddress_BscMainNet: ContractDeployAddressInterface = {};
+const ContractDeployAddress_BscMainNet: ContractDeployAddressInterface = {
+  WelcomeEveryOne: null,
+};
 let _ContractDeployAddress: ContractDeployAddressInterface =
   ContractDeployAddress_BscTestNet;
 switch (hardhatArguments.network) {
-  case deployNetwork.bsc_testnet:
+  case deployNetwork.polygon_testnet:
     _ContractDeployAddress = ContractDeployAddress_BscTestNet;
     break;
-  case deployNetwork.bsc_mainnet:
+  case deployNetwork.polygon_mainnet:
     _ContractDeployAddress = ContractDeployAddress_BscMainNet;
     break;
   default:
