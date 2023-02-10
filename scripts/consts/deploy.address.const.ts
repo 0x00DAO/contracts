@@ -23,7 +23,7 @@ const ContractDeployAddress_PolygonTestNet: ContractDeployAddressInterface = {
 
 const ContractDeployAddress_PolygonMainNet: ContractDeployAddressInterface = {
   WelcomeEveryOne: '0x576f54c39Cb8172C92F315464267E09BD97F960B',
-  TokenSafeBoxTeam: null,
+  TokenSafeBoxTeam: '0x89eEB8e4564Fc7b89DA6B3478A6dc355E1C1Be6B',
 };
 let _ContractDeployAddress: ContractDeployAddressInterface = null as any;
 switch (hardhatArguments.network) {
