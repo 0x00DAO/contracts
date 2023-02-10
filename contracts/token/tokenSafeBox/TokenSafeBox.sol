@@ -10,6 +10,7 @@ import "@openzeppelin/contracts-upgradeable/token/ERC721/utils/ERC721HolderUpgra
 import "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/security/ReentrancyGuardUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
+import "../../core/contract-upgradeable/VersionUpgradeable.sol";
 
 /**
  * @title BNB\ERC20\ERC721 Token with control over token transfers
@@ -20,7 +21,8 @@ contract TokenSafeBox is
     ERC721HolderUpgradeable,
     ReentrancyGuardUpgradeable,
     PausableUpgradeable,
-    UUPSUpgradeable
+    UUPSUpgradeable,
+    VersionUpgradeable
 {
     event TokenReceived(address from, uint256 amount);
     event Withdraw(address to, uint256 amount);
@@ -50,6 +52,7 @@ contract TokenSafeBox is
         __ReentrancyGuard_init();
         __UUPSUpgradeable_init();
         __Pausable_init();
+        __VersionUpgradeable_init();
 
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(PAUSER_ROLE, msg.sender);
@@ -72,6 +75,10 @@ contract TokenSafeBox is
 
     function unpause() public onlyRole(PAUSER_ROLE) {
         _unpause();
+    }
+
+    function _version() internal pure virtual override returns (uint256) {
+        return 2;
     }
 
     function withdraw(address payable to, uint256 amount)

@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import { Contract } from 'ethers';
+import { BigNumber, Contract } from 'ethers';
 import { ethers, upgrades } from 'hardhat';
 
 describe('TokenSafeBox', () => {
@@ -57,5 +57,9 @@ describe('TokenSafeBox', () => {
     expect(await welcomeEvenOne.balanceOf(addr1.address)).to.equal(
       ethers.utils.parseEther('100')
     );
+  });
+
+  it('should be version', async () => {
+    expect(await tokenSafeBox.version()).to.instanceOf(BigNumber);
   });
 });
