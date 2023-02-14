@@ -2,7 +2,12 @@
 
 ## contract addresses
 
-### bsc mainnet
+- WelcomeEveryOne
+  - address: [mainnet](https://polygonscan.com/address/0x576f54c39Cb8172C92F315464267E09BD97F960B)|[testnet](https://mumbai.polygonscan.com/address/0x4f43b18e1A9a03B132a0bc6c893928460f445901)
+  - description: WEO token contract
+- TokenSafeBoxTeamProject
+  - address: [mainnet](https://polygonscan.com/address/0x8706b341A1678a1a7A2971C995CABB761752c9DB)|[testnet](https://mumbai.polygonscan.com/address/0xFbfa482256e01139190d3DB9339C23d5847d967D)
+  - description: TokenSafeBoxTeamProject contract
 
 ## how to develop and test
 
