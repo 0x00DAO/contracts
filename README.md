@@ -7,6 +7,7 @@
   - description: WEO token contract
 - TokenSafeBoxTeamProject
   - address: [0x8706b341A1678a1a7A2971C995CABB761752c9DB](https://polygonscan.com/address/0x8706b341A1678a1a7A2971C995CABB761752c9DB)
+  - description: TokenSafeBoxTeamProject contract
 
 ## how to develop and test
 
