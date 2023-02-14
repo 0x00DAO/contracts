@@ -136,7 +136,9 @@ async function deployGrantRoles(
     await contract
       .grantRole(role.roleId, grantAddress)
       .then((tx: ContractTransaction) => tx.wait());
-    console.log(`grant ${role.roleName} role to: ${grantAddress}`);
+    console.log(
+      `contract:${contract.address}, grant:'${role.roleName} role' to address:${grantAddress}`
+    );
   }
 }
 
@@ -152,7 +154,9 @@ async function deployRevokeRoles(
     await contract
       .revokeRole(role.roleId, revokeAddress)
       .then((tx: ContractTransaction) => tx.wait());
-    console.log(`revoke ${role.roleName} role from: ${revokeAddress}`);
+    console.log(
+      `contract:${contract.address}, revoke:'${role.roleName} role' from address:${revokeAddress}`
+    );
   }
 }
 export const deployUtil = {

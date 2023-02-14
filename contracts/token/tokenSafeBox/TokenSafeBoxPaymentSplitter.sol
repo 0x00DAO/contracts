@@ -3,19 +3,17 @@ pragma solidity ^0.8.9;
 
 import "@openzeppelin/contracts-upgradeable/security/PausableUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/access/AccessControlUpgradeable.sol";
+import "@openzeppelin/contracts-upgradeable/finance/PaymentSplitterUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol";
 import "@openzeppelin/contracts-upgradeable/proxy/utils/UUPSUpgradeable.sol";
-
-import "../../core/contract-upgradeable/finance/VestingByTimeBlockWalletUpgradeable.sol";
-import "../../providers/datetime/DateTime.sol";
 import "../../core/contract-upgradeable/VersionUpgradeable.sol";
 
-contract WEOTeamWallet is
+contract TokenSafeBoxPaymentSplitter is
     Initializable,
     PausableUpgradeable,
     AccessControlUpgradeable,
+    PaymentSplitterUpgradeable,
     UUPSUpgradeable,
-    VestingByTimeBlockWalletUpgradeable,
     VersionUpgradeable
 {
     bytes32 public constant PAUSER_ROLE = keccak256("PAUSER_ROLE");
@@ -26,20 +24,14 @@ contract WEOTeamWallet is
         _disableInitializers();
     }
 
-    function initialize(
-        address beneficiaryAddress,
-        uint64 startTimestamp,
-        uint64 durationSeconds
-    ) public initializer {
+    function initialize(address[] memory payees, uint256[] memory shares_)
+        public
+        initializer
+    {
         __Pausable_init();
         __AccessControl_init();
         __UUPSUpgradeable_init();
-
-        __VestingByTimeBlockWallet_init(
-            beneficiaryAddress,
-            startTimestamp,
-            durationSeconds
-        );
+        __PaymentSplitter_init(payees, shares_);
 
         _grantRole(DEFAULT_ADMIN_ROLE, msg.sender);
         _grantRole(PAUSER_ROLE, msg.sender);
@@ -54,31 +46,26 @@ contract WEOTeamWallet is
         _unpause();
     }
 
+    function _version() internal pure virtual override returns (uint256) {
+        return 1;
+    }
+
     function _authorizeUpgrade(address newImplementation)
         internal
         override
         onlyRole(UPGRADER_ROLE)
     {}
 
-    function _version() internal pure virtual override returns (uint256) {
-        return 1;
+    //override release function
+    function releaseETH(address payable payee) public whenNotPaused {
+        release(payee);
     }
 
-    /**
-     * @dev Release the native token (ether) that have already vested.
-     *
-     * Emits a {EtherReleased} event.
-     */
-    function release() public virtual override whenNotPaused {
-        super.release();
-    }
-
-    /**
-     * @dev Release the tokens that have already vested.
-     *
-     * Emits a {ERC20Released} event.
-     */
-    function release(address token) public virtual override whenNotPaused {
-        super.release(token);
+    //override release function
+    function releaseERC20(IERC20Upgradeable token, address account)
+        public
+        whenNotPaused
+    {
+        release(token, account);
     }
 }
