@@ -40,7 +40,7 @@ const ContractDeployAddress_PolygonTestNet: ContractDeployAddressInterface = {
    */
   // TokenSafeBoxTeamDAO?: ContractDeployAddress;
   TokenSafeBoxTeamProject: '0xFbfa482256e01139190d3DB9339C23d5847d967D',
-  // TokenSafeBoxTeamOther?: ContractDeployAddress;
+  TokenSafeBoxTeamOther: '0x2CB993648Ef153fF6d2d3188a2eea7b24744a0AF',
 };
 
 const ContractDeployAddress_PolygonMainNet: ContractDeployAddressInterface = {
@@ -52,7 +52,7 @@ const ContractDeployAddress_PolygonMainNet: ContractDeployAddressInterface = {
    */
   // TokenSafeBoxTeamDAO?: ContractDeployAddress;
   TokenSafeBoxTeamProject: '0x8706b341A1678a1a7A2971C995CABB761752c9DB',
-  // TokenSafeBoxTeamOther?: ContractDeployAddress;
+  TokenSafeBoxTeamOther: '0x3F2Ac86101B675BbA7b12aa61f931E63b13b5d6B',
 };
 
 let _ContractDeployAddress: ContractDeployAddressInterface = null as any;
