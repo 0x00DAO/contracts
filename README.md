@@ -11,6 +11,8 @@
 - TokenSafeBoxTeamOther
   - address: [0x3F2Ac86101B675BbA7b12aa61f931E63b13b5d6B](https://polygonscan.com/address/0x3F2Ac86101B675BbA7b12aa61f931E63b13b5d6B)
   - description: TokenSafeBoxTeamOther contract
+- TokenSafeBoxTeamDAO
+  - address: [0x4fFe08f38a13702DfF1d152C872c1c47841749Ca](https://polygonscan.com/address/0x4fFe08f38a13702DfF1d152C872c1c47841749Ca)
 
 ## how to develop and test
 
