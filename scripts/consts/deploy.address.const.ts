@@ -43,7 +43,7 @@ const ContractDeployAddress_PolygonTestNet: ContractDeployAddressInterface = {
   /**
    * Team Splitter
    */
-  TokenSafeBoxPaymentSplitterTeam: null,
+  TokenSafeBoxPaymentSplitterTeam: '0xee9dc7C13b220e1C89Cc96c8fb1f38d5d6bF9554',
 
   /**
    * Team Holders

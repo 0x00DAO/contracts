@@ -20,7 +20,14 @@ async function main() {
       contractAddress
     );
   } else {
-    const contract = await deployUpgradeProxy(DeployContractName);
+    const contract = await deployUpgradeProxy(DeployContractName, [
+      [
+        ContractDeployAddress.TokenSafeBoxTeamDAO,
+        ContractDeployAddress.TokenSafeBoxTeamProject,
+        ContractDeployAddress.TokenSafeBoxTeamOther,
+      ],
+      [20, 30, 50],
+    ]);
   }
 }
 
