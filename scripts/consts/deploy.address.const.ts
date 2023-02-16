@@ -65,7 +65,7 @@ const ContractDeployAddress_PolygonMainNet: ContractDeployAddressInterface = {
   /**
    * Team Splitter
    */
-  TokenSafeBoxPaymentSplitterTeam: null,
+  TokenSafeBoxPaymentSplitterTeam: '0x255A90b302203b09f968a4602d905972aae49009',
 
   /**
    * Team Holders

@@ -13,6 +13,10 @@
   - description: TokenSafeBoxTeamOther contract
 - TokenSafeBoxTeamDAO
   - address: [0x4fFe08f38a13702DfF1d152C872c1c47841749Ca](https://polygonscan.com/address/0x4fFe08f38a13702DfF1d152C872c1c47841749Ca)
+  - description: TokenSafeBoxTeamDAO contract
+- TokenSafeBoxPaymentSplitterTeam
+  - address: [0x255A90b302203b09f968a4602d905972aae49009](https://polygonscan.com/address/0x255A90b302203b09f968a4602d905972aae49009)
+  - description: TokenSafeBoxPaymentSplitterTeam contract
 
 ## how to develop and test
 
