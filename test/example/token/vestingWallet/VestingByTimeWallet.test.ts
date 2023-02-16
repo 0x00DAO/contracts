@@ -2,7 +2,7 @@ import { expect } from 'chai';
 import { Contract } from 'ethers';
 import { ethers, upgrades } from 'hardhat';
 
-describe('WEOTeamWallet', () => {
+describe('VestingByTimeWallet', () => {
   let contract: Contract;
   let contractWEO: Contract;
   let startTimestamp: number;
@@ -14,8 +14,10 @@ describe('WEOTeamWallet', () => {
     // duringTimestamp set during 30 years
     duringTimestamp = 30 * 365 * 24 * 60 * 60;
 
-    const WEOTeamWallet = await ethers.getContractFactory('WEOTeamWallet');
-    contract = await upgrades.deployProxy(WEOTeamWallet, [
+    const VestingByTimeWallet = await ethers.getContractFactory(
+      'VestingByTimeWallet'
+    );
+    contract = await upgrades.deployProxy(VestingByTimeWallet, [
       addr1.address,
       startTimestamp,
       duringTimestamp,
