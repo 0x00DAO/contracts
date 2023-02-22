@@ -137,7 +137,7 @@ async function deployGrantRoles(
       .grantRole(role.roleId, grantAddress)
       .then((tx: ContractTransaction) => tx.wait());
     console.log(
-      `contract:${contract.address}, grant:'${role.roleName} role' to address:${grantAddress}`
+      `contract: ${contract.address}, grant: '${role.roleName} role' to address: ${grantAddress}`
     );
   }
 }
@@ -155,7 +155,7 @@ async function deployRevokeRoles(
       .revokeRole(role.roleId, revokeAddress)
       .then((tx: ContractTransaction) => tx.wait());
     console.log(
-      `contract:${contract.address}, revoke:'${role.roleName} role' from address:${revokeAddress}`
+      `contract: ${contract.address}, revoke: '${role.roleName} role' from address: ${revokeAddress}`
     );
   }
 }

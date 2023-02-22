@@ -20,7 +20,16 @@ async function main() {
       contractAddress
     );
   } else {
-    const contract = await deployUpgradeProxy(DeployContractName);
+    //Date and time (GMT): 2023年2月1日WednesdayAM12点00分
+    const startTimestamp = 1675209600;
+    //30 years
+    const duration = 30 * 365 * 24 * 60 * 60;
+
+    const contract = await deployUpgradeProxy(DeployContractName, [
+      ContractDeployAddress.TokenSafeBoxPaymentSplitterTeam,
+      startTimestamp,
+      duration,
+    ]);
   }
 }
 
