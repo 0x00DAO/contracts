@@ -18,6 +18,23 @@
   - address: [0x255A90b302203b09f968a4602d905972aae49009](https://polygonscan.com/address/0x255A90b302203b09f968a4602d905972aae49009)
   - description: TokenSafeBoxPaymentSplitterTeam contract
 
+## token contract distribution
+
+```shell
+WelcomeEveryOne-Token
+├── TokenVestingTeam
+│   └── TokenSafeBoxPaymentSplitterTeam
+│       ├── TokenSafeBoxTeamDAO
+│       ├── TokenSafeBoxTeamProject
+│       └── TokenSafeBoxTeamOther
+├── TokenVestingCommunity
+│   └── ...
+├── TokenVestingFund
+│   └── ...
+└── TokenVestingOthers
+    └── ...
+```
+
 ## how to develop and test
 
 ### Principle of development
