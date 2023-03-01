@@ -86,7 +86,7 @@ contract ERC5192Upgradeable is
     /// @notice Unlocks a token
     /// @dev Unlocks a token, allowing it to be transferred.
     /// @param tokenId The identifier for a token.
-    function unlock(uint256 tokenId) external virtual {
+    function unlock(uint256 tokenId) internal virtual {
         _locked[tokenId] = false;
         emit Unlocked(tokenId);
     }
