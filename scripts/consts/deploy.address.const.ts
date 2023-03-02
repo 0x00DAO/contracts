@@ -87,7 +87,7 @@ const ContractDeployAddress_PolygonMainNet: ContractDeployAddressInterface = {
   /**
    * SBTs for DAO contributors
    */
-  SoulWelcomeEveryOne: null,
+  SoulWelcomeEveryOne: '0x1A516d0E324575Fd6BdD2E54FB9cFcB6C8F3e7A4',
 };
 
 let _ContractDeployAddress: ContractDeployAddressInterface = null as any;

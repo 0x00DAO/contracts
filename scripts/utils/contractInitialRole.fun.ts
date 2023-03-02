@@ -12,7 +12,7 @@ import { getRuntimeConfig } from './config.util';
 import { deployUtil } from './deploy.util';
 
 const DeployContractName = 'TokenSafeBox';
-const contractAddress = ContractDeployAddress.TokenVestingTeam;
+const contractAddress = ContractDeployAddress.SoulWelcomeEveryOne;
 
 async function getContract(): Promise<Contract> {
   assert(contractAddress, 'contractAddress is null');
