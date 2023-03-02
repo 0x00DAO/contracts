@@ -29,6 +29,11 @@ interface ContractDeployAddressInterface {
   TokenSafeBoxTeamDAO?: ContractDeployAddress;
   TokenSafeBoxTeamProject?: ContractDeployAddress;
   TokenSafeBoxTeamOther?: ContractDeployAddress;
+
+  /**
+   * SBTs for DAO contributors
+   */
+  SoulWelcomeEveryOne?: ContractDeployAddress;
 }
 
 const ContractDeployAddress_PolygonTestNet: ContractDeployAddressInterface = {
@@ -51,6 +56,11 @@ const ContractDeployAddress_PolygonTestNet: ContractDeployAddressInterface = {
   TokenSafeBoxTeamDAO: '0x523Ca418a6aE25b22B63431092D9c4d9Dbf080Dd',
   TokenSafeBoxTeamProject: '0xFbfa482256e01139190d3DB9339C23d5847d967D',
   TokenSafeBoxTeamOther: '0x2CB993648Ef153fF6d2d3188a2eea7b24744a0AF',
+
+  /**
+   * SBTs for DAO contributors
+   */
+  SoulWelcomeEveryOne: '0x53601e41FEDE478fBd3e0d97C19f09F71aFdA905',
 };
 
 const ContractDeployAddress_PolygonMainNet: ContractDeployAddressInterface = {
@@ -73,6 +83,11 @@ const ContractDeployAddress_PolygonMainNet: ContractDeployAddressInterface = {
   TokenSafeBoxTeamDAO: '0x4fFe08f38a13702DfF1d152C872c1c47841749Ca',
   TokenSafeBoxTeamProject: '0x8706b341A1678a1a7A2971C995CABB761752c9DB',
   TokenSafeBoxTeamOther: '0x3F2Ac86101B675BbA7b12aa61f931E63b13b5d6B',
+
+  /**
+   * SBTs for DAO contributors
+   */
+  SoulWelcomeEveryOne: null,
 };
 
 let _ContractDeployAddress: ContractDeployAddressInterface = null as any;
