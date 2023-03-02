@@ -5,13 +5,11 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts-upgradeable/utils/ContextUpgradeable.sol";
 import "@openzeppelin/contracts-upgradeable/utils/introspection/ERC165Upgradeable.sol";
 import "../interface/ERC5192/IERC5192Upgradeable.sol";
-import "../VersionUpgradeable.sol";
 
 contract ERC5192Upgradeable is
     Initializable,
-    IERC5192Upgradeable,
     ContextUpgradeable,
-    VersionUpgradeable,
+    IERC5192Upgradeable,
     ERC165Upgradeable
 {
     mapping(uint256 => bool) private _locked;
@@ -26,11 +24,10 @@ contract ERC5192Upgradeable is
     function __ERC5192_init_unchained() internal onlyInitializing {}
 
     /**
-     * @dev Modifier to make a function callable only when the contract is not paused.
      *
      * Requirements:
      *
-     * - The contract must not be locked.
+     * - The token must not be locked.
      */
     modifier whenNotLock(uint256 tokenId) {
         _requireNotLock(tokenId);
@@ -38,7 +35,6 @@ contract ERC5192Upgradeable is
     }
 
     /**
-     * @dev Modifier to make a function callable only when the contract is paused.
      *
      * Requirements:
      *
